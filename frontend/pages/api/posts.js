@@ -15,15 +15,15 @@ export default async function handler(req, res) {
             res.json({ error });
         }
     } else if (req.method === 'POST') {
-        try {
-            await connectToDatabase();
-            console.log(req.body);
-            const post = await Post.create(req.body);
+        // try {
+        //     await connectToDatabase();
+        //     console.log(req.body);
+        //     const post = await Post.create(req.body);
 
-            res.json({ post });
-        } catch (error) {
-            console.log(error);
-            res.json({ error });
-        }
+        //     res.json({ post });
+        // } catch (error) {
+        console.log(error);
+        res.json({ error });
+        // }
     }
 };

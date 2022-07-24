@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-// import { MongoClient } from 'mongodb'
 
 let uri = process.env.MONGODB_URI
 let db = process.env.MONGODB_DB
@@ -21,6 +20,12 @@ const connectToDatabase = async () => mongoose.connect(uri,
     {
         dbName: db,
         useNewUrlParser: true,
-    });
+        useUnifiedTopology: true,
+        // useCreateIndex: true,
+    })
+    .then(() => {
+        console.log("MongoDB Connected");
+    })
+    .catch((err) => console.log(err));
 
 export default connectToDatabase;
