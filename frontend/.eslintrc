@@ -1,3 +1,18 @@
 {
-	"extends": ["eslint:recommended", "next/core-web-vitals", "next"]
+	"extends": ["eslint:recommended", "next/core-web-vitals", "next", "plugin:prettier/recommended"],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"tabWidth": 4,
+				"useTabs": true,
+				"semi": true,
+				"singleQuote": false,
+				"quoteProps": "consistent",
+				"trailingComma": "es5",
+				"bracketSpacing": true,
+				"bracketSameLine": false
+			}
+		]
+	}
 }
