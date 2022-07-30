@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -13,6 +13,6 @@ const postSchema = new Schema({
     timestamps: true,
 });
 
-const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
+const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
 
 module.exports = Post;
