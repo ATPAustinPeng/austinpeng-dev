@@ -46,42 +46,42 @@ export default function Home({ posts }) {
 	}
 }
 
-// export async function getServerSideProps() {
-// 	// Fetch data from external API
-// 	const host = process.env.HOST || 'http://localhost:3000';
-// 	const res = await fetch(host + '/api/posts');
-// 	const posts = await res.json()
+export async function getServerSideProps() {
+	// Fetch data from external API
+	const host = process.env.HOST || 'http://localhost:3000';
+	const res = await fetch(host + '/api/posts');
+	const posts = await res.json()
 
-// 	// Pass data to the page via props
-// 	return { props: { posts } }
-// }
+	// Pass data to the page via props
+	return { props: { posts } }
+}
 
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do
 // direct database queries.
-export async function getStaticProps() {
-	// Call an external API endpoint to get posts.
-	// You can use any data fetching library
-	const host = process.env.HOST || 'http://localhost:3000';
-	// const host = 'https://austinpeng.dev';
+// export async function getStaticProps() {
+// 	// Call an external API endpoint to get posts.
+// 	// You can use any data fetching library
+// 	const host = process.env.HOST || 'http://localhost:3000';
+// 	// const host = 'https://austinpeng.dev';
 
-	const res = await fetch(host + '/api/posts')
+// 	const res = await fetch(host + '/api/posts')
 
-	const posts = await res.json()
+// 	const posts = await res.json()
 
-	if (!posts) {
-		return {
-			notFound: true,
-		}
-	}
+// 	if (!posts) {
+// 		return {
+// 			notFound: true,
+// 		}
+// 	}
 
-	// By returning { props: { posts } }, the component
-	// will receive `posts` as a prop at build time
-	return {
-		props: {
-			posts,
-		},
-	}
-}
+// 	// By returning { props: { posts } }, the component
+// 	// will receive `posts` as a prop at build time
+// 	return {
+// 		props: {
+// 			posts,
+// 		},
+// 	}
+// }
 
 // export default Test;
