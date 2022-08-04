@@ -1,4 +1,4 @@
-import Feed from "../components/feed";
+import Feed from "../../components/feed";
 
 export default function Writing({ posts }) {
 	return <Feed posts={posts.posts} />;
