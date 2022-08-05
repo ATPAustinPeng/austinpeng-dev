@@ -1,7 +1,12 @@
 import Feed from "../../components/feed";
+import Layout from "../../components/layout";
 
 export default function Writing({ posts }) {
-	return <Feed posts={posts.posts} />;
+	return (
+		<Layout>
+			<Feed posts={posts.posts} />;
+		</Layout>
+	);
 }
 
 export async function getServerSideProps() {

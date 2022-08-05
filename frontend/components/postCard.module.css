@@ -1,0 +1,39 @@
+/* TODO: add story to convert all css to tailwind css or scss idk lol*/
+.postCard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.postCard > * {
+    color: #000000;
+}
+.postCard > div {
+    padding: 5px 0px;
+}
+
+span.divider {
+    margin: 0px 15px 0px;
+}
+
+.postTitle:hover {
+    text-decoration: underline 1px;
+    text-underline-offset: 2px;
+}
+
+.postTitle > h1 {
+    font-weight: 600;
+}
+
+.postDate {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.postTags {
+    font-size: 14px;
+    font-weight: 600;
+    /* color: #0F9640; */
+    /* color: #0955F3; */
+    color: #e63089;
+}
