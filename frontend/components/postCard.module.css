@@ -2,7 +2,9 @@
 .postCard {
     display: flex;
     flex-direction: column;
-    margin-top: 75px;
+    padding: 25px 25px 50px;
+    margin-bottom: 25px;
+    background-color: #ebfaef;
 }
 
 .postCard > * {
@@ -31,6 +33,7 @@ span.divider {
 }
 
 .postTags {
+    justify-content: center;
     font-size: 14px;
     font-weight: 600;
     /* color: #0F9640; */

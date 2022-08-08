@@ -8,7 +8,7 @@ import postCardStyles from "./postCard.module.css";
 export default function PostCard(props) {
 	const post = props.post;
 	const s = post.lengthOfRead > 1 ? "s" : "";
-	const hyphenatedPostTitle = post.title.split(" ").join("%2D");
+	const slug = post.slug;
 	let tags = JSON.stringify(post.tags);
 	tags = JSON.parse(tags);
 
@@ -16,7 +16,7 @@ export default function PostCard(props) {
 		<>
 			<div className={postCardStyles.postCard}>
 				<Link
-					href={`/writing/${hyphenatedPostTitle}`}
+					href={`/writing/${slug}`}
 					className={postCardStyles.postTitle}
 				>
 					<h1>{post.title}</h1>
@@ -25,9 +25,7 @@ export default function PostCard(props) {
 					<div className={postCardStyles.postDate}>{post.date}</div>
 					<span className={postCardStyles.divider}></span>
 					<div className={postCardStyles.postTags}>
-						{tags.map((tag, index) => {
-							return <p key={index}>{tag}</p>;
-						})}
+						{tags.join(" ")}
 					</div>
 				</div>
 				<div className="post-description">{post.description}</div>

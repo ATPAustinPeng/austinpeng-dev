@@ -1,8 +1,6 @@
 import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 
-const name = "Austin Peng";
-
 export default function Home() {
 	return (
 		<>
