@@ -17,8 +17,7 @@ export default function PostTemplate({ post }) {
 // but unhyphenating it won't work if the title originally had hyphens
 // TODO: if not solved, create a jira bug, post title cannot use hyphens
 // SOLUTION: blog post must have title and slug (title but in hyphenatable version
-export async function getStaticProps(context) {
-	// const id = context.params.id;
+export async function getServerSideProps(context) {
 	const slug = context.params.slug;
 
 	const host = process.env.HOST || "http://localhost:3000";
@@ -30,25 +29,25 @@ export async function getStaticProps(context) {
 	};
 }
 
-export async function getStaticPaths() {
-	const host = process.env.HOST || "http://localhost:3000";
-	const res = await fetch(host + "/api/posts");
-	const jsonData = await res.json();
-
-	console.log(jsonData);
-
-	const paths = jsonData.posts.map((post) => {
-		// const slug = post.slug.toString();
-		return {
-			params: {
-				// id: post._id,
-				slug: post.slug.toString(),
-			},
-		};
-	});
-
-	return {
-		paths,
-		fallback: false,
-	};
-}
+// export async function getStaticPaths() {
+// 	const host = process.env.HOST || "http://localhost:3000";
+// 	const res = await fetch(host + "/api/posts");
+// 	const jsonData = await res.json();
+//
+// 	console.log(jsonData);
+//
+// 	const paths = jsonData.posts.map((post) => {
+// 		// const slug = post.slug.toString();
+// 		return {
+// 			params: {
+// 				// id: post._id,
+// 				slug: post.slug.toString(),
+// 			},
+// 		};
+// 	});
+//
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	};
+// }
