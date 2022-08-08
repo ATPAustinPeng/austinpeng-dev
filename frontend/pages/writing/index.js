@@ -16,11 +16,6 @@ export async function getServerSideProps() {
 	const res = await fetch(host + "/api/posts");
 	const jsonData = await res.json();
 
-	// let posts = JSON.parse(jsonData);
-	// jsonData.posts.forEach((post) => {
-	// 	post["slug"] = post.title.split(" ").join("-").toString();
-	// });
-
 	let posts = jsonData.posts;
 
 	// return negative if postA.date < postB.date
