@@ -8,4 +8,4 @@ export default function Post(props) {
 	return <></>;
 }
 
-	// TODO: implement posts to at least copy paste the markdown contents over
+// TODO: implement posts to at least copy paste the markdown contents over
